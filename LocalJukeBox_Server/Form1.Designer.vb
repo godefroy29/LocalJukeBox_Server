@@ -33,6 +33,7 @@ Partial Class Form1
         Me.VoteTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemMusicBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btn2 = New System.Windows.Forms.Button()
+        Me.btn3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemMusicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -122,11 +123,21 @@ Partial Class Form1
         Me.btn2.Text = "Button1"
         Me.btn2.UseVisualStyleBackColor = True
         '
+        'btn3
+        '
+        Me.btn3.Location = New System.Drawing.Point(800, 111)
+        Me.btn3.Name = "btn3"
+        Me.btn3.Size = New System.Drawing.Size(75, 23)
+        Me.btn3.TabIndex = 4
+        Me.btn3.Text = "Next"
+        Me.btn3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(968, 458)
+        Me.Controls.Add(Me.btn3)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txt1)
@@ -150,4 +161,5 @@ Partial Class Form1
     Friend WithEvents VoteNOKDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents VoteTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btn2 As Button
+    Friend WithEvents btn3 As Button
 End Class
