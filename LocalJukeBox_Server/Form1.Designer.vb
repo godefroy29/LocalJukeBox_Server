@@ -28,32 +28,33 @@ Partial Class frmMain
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btn2 = New System.Windows.Forms.Button()
         Me.btn3 = New System.Windows.Forms.Button()
+        Me.btnParcourir = New System.Windows.Forms.Button()
+        Me.txt2 = New System.Windows.Forms.TextBox()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FileNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteOKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteNOKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemMusicBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btnParcourir = New System.Windows.Forms.Button()
-        Me.txt2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemMusicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn1
         '
-        Me.btn1.Location = New System.Drawing.Point(660, 10)
+        Me.btn1.Location = New System.Drawing.Point(579, 9)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(75, 23)
         Me.btn1.TabIndex = 0
-        Me.btn1.Text = "ReadFile"
+        Me.btn1.Text = "Via XML"
         Me.btn1.UseVisualStyleBackColor = True
         '
         'txt1
         '
         Me.txt1.Location = New System.Drawing.Point(12, 12)
         Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(642, 20)
+        Me.txt1.Size = New System.Drawing.Size(561, 20)
         Me.txt1.TabIndex = 1
         Me.txt1.Text = "D:\_Projet\LocalJukeBox\LocalJukeBox_Server\LocalJukeBox_Server\musicList.xml"
         '
@@ -71,12 +72,12 @@ Partial Class frmMain
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(722, 379)
+        Me.DataGridView1.Size = New System.Drawing.Size(722, 366)
         Me.DataGridView1.TabIndex = 2
         '
         'btn2
         '
-        Me.btn2.Location = New System.Drawing.Point(800, 50)
+        Me.btn2.Location = New System.Drawing.Point(660, 9)
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(75, 23)
         Me.btn2.TabIndex = 3
@@ -85,12 +86,29 @@ Partial Class frmMain
         '
         'btn3
         '
-        Me.btn3.Location = New System.Drawing.Point(800, 111)
+        Me.btn3.Location = New System.Drawing.Point(660, 38)
         Me.btn3.Name = "btn3"
         Me.btn3.Size = New System.Drawing.Size(75, 23)
         Me.btn3.TabIndex = 4
         Me.btn3.Text = "Next"
         Me.btn3.UseVisualStyleBackColor = True
+        '
+        'btnParcourir
+        '
+        Me.btnParcourir.Location = New System.Drawing.Point(579, 38)
+        Me.btnParcourir.Name = "btnParcourir"
+        Me.btnParcourir.Size = New System.Drawing.Size(75, 23)
+        Me.btnParcourir.TabIndex = 5
+        Me.btnParcourir.Text = "Via Folder"
+        Me.btnParcourir.UseVisualStyleBackColor = True
+        '
+        'txt2
+        '
+        Me.txt2.Location = New System.Drawing.Point(12, 41)
+        Me.txt2.Name = "txt2"
+        Me.txt2.Size = New System.Drawing.Size(561, 20)
+        Me.txt2.TabIndex = 6
+        Me.txt2.Text = "C:\Users\Godefroy\Downloads"
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -134,28 +152,21 @@ Partial Class frmMain
         '
         Me.ItemMusicBindingSource.DataSource = GetType(LocalJukeBox_Server.itemMusic)
         '
-        'btnParcourir
+        'Label1
         '
-        Me.btnParcourir.Location = New System.Drawing.Point(660, 39)
-        Me.btnParcourir.Name = "btnParcourir"
-        Me.btnParcourir.Size = New System.Drawing.Size(75, 23)
-        Me.btnParcourir.TabIndex = 5
-        Me.btnParcourir.Text = "Parcourir"
-        Me.btnParcourir.UseVisualStyleBackColor = True
-        '
-        'txt2
-        '
-        Me.txt2.Location = New System.Drawing.Point(12, 41)
-        Me.txt2.Name = "txt2"
-        Me.txt2.Size = New System.Drawing.Size(642, 20)
-        Me.txt2.TabIndex = 6
-        Me.txt2.Text = "C:\Users\Godefroy\Downloads"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 436)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(317, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Le nombre de vote est défini par l'id de la musique pour le moment"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(968, 458)
+        Me.ClientSize = New System.Drawing.Size(747, 458)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt2)
         Me.Controls.Add(Me.btnParcourir)
         Me.Controls.Add(Me.btn3)
@@ -185,4 +196,5 @@ Partial Class frmMain
     Friend WithEvents btn3 As Button
     Friend WithEvents btnParcourir As Button
     Friend WithEvents txt2 As TextBox
+    Friend WithEvents Label1 As Label
 End Class
