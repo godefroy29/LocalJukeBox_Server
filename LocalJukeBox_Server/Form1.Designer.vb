@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -26,14 +26,16 @@ Partial Class Form1
         Me.btn1 = New System.Windows.Forms.Button()
         Me.txt1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btn2 = New System.Windows.Forms.Button()
+        Me.btn3 = New System.Windows.Forms.Button()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FileNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteOKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteNOKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VoteTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemMusicBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btn2 = New System.Windows.Forms.Button()
-        Me.btn3 = New System.Windows.Forms.Button()
+        Me.btnParcourir = New System.Windows.Forms.Button()
+        Me.txt2 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemMusicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,7 +46,7 @@ Partial Class Form1
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(75, 23)
         Me.btn1.TabIndex = 0
-        Me.btn1.Text = "Button1"
+        Me.btn1.Text = "ReadFile"
         Me.btn1.UseVisualStyleBackColor = True
         '
         'txt1
@@ -64,13 +66,31 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.FileNameDataGridViewTextBoxColumn, Me.VoteOKDataGridViewTextBoxColumn, Me.VoteNOKDataGridViewTextBoxColumn, Me.VoteTotalDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ItemMusicBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 39)
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 67)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(722, 407)
+        Me.DataGridView1.Size = New System.Drawing.Size(722, 379)
         Me.DataGridView1.TabIndex = 2
+        '
+        'btn2
+        '
+        Me.btn2.Location = New System.Drawing.Point(800, 50)
+        Me.btn2.Name = "btn2"
+        Me.btn2.Size = New System.Drawing.Size(75, 23)
+        Me.btn2.TabIndex = 3
+        Me.btn2.Text = "Play/Pause"
+        Me.btn2.UseVisualStyleBackColor = True
+        '
+        'btn3
+        '
+        Me.btn3.Location = New System.Drawing.Point(800, 111)
+        Me.btn3.Name = "btn3"
+        Me.btn3.Size = New System.Drawing.Size(75, 23)
+        Me.btn3.TabIndex = 4
+        Me.btn3.Text = "Next"
+        Me.btn3.UseVisualStyleBackColor = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -114,36 +134,37 @@ Partial Class Form1
         '
         Me.ItemMusicBindingSource.DataSource = GetType(LocalJukeBox_Server.itemMusic)
         '
-        'btn2
+        'btnParcourir
         '
-        Me.btn2.Location = New System.Drawing.Point(800, 50)
-        Me.btn2.Name = "btn2"
-        Me.btn2.Size = New System.Drawing.Size(75, 23)
-        Me.btn2.TabIndex = 3
-        Me.btn2.Text = "Button1"
-        Me.btn2.UseVisualStyleBackColor = True
+        Me.btnParcourir.Location = New System.Drawing.Point(660, 39)
+        Me.btnParcourir.Name = "btnParcourir"
+        Me.btnParcourir.Size = New System.Drawing.Size(75, 23)
+        Me.btnParcourir.TabIndex = 5
+        Me.btnParcourir.Text = "Parcourir"
+        Me.btnParcourir.UseVisualStyleBackColor = True
         '
-        'btn3
+        'txt2
         '
-        Me.btn3.Location = New System.Drawing.Point(800, 111)
-        Me.btn3.Name = "btn3"
-        Me.btn3.Size = New System.Drawing.Size(75, 23)
-        Me.btn3.TabIndex = 4
-        Me.btn3.Text = "Next"
-        Me.btn3.UseVisualStyleBackColor = True
+        Me.txt2.Location = New System.Drawing.Point(12, 41)
+        Me.txt2.Name = "txt2"
+        Me.txt2.Size = New System.Drawing.Size(642, 20)
+        Me.txt2.TabIndex = 6
+        Me.txt2.Text = "C:\Users\Godefroy\Downloads"
         '
-        'Form1
+        'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(968, 458)
+        Me.Controls.Add(Me.txt2)
+        Me.Controls.Add(Me.btnParcourir)
         Me.Controls.Add(Me.btn3)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txt1)
         Me.Controls.Add(Me.btn1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "frmMain"
+        Me.Text = "LocalJukeBox"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemMusicBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -162,4 +183,6 @@ Partial Class Form1
     Friend WithEvents VoteTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btn2 As Button
     Friend WithEvents btn3 As Button
+    Friend WithEvents btnParcourir As Button
+    Friend WithEvents txt2 As TextBox
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports System.Xml
 
-Public Class Form1
+Public Class frmMain
 
     Dim WithEvents myPlayer As WMPLib.WindowsMediaPlayer
     Dim myMusicList As List(Of itemMusic)
@@ -62,14 +62,13 @@ Public Class Form1
     Private Sub playNext()
         Dim myItemMusic As itemMusic
         myItemMusic = findMusicMaxVote()
-        MsgBox(myItemMusic.fileName)
+        'MsgBox(myItemMusic.fileName)
         LaunchMusic(myItemMusic)
     End Sub
 
 
     Private Function findMusicMaxVote() As itemMusic
         Dim myItemMusic As itemMusic
-        Dim i As Integer
         If (myMusicList.OrderByDescending(Function(m) m.voteTotal).FirstOrDefault.Equals(myMusicList.OrderBy(Function(m) m.voteTotal).FirstOrDefault)) Then
             myItemMusic = myMusicList.ElementAt(rnd.Next(myMusicList.Count))
         Else
@@ -101,6 +100,28 @@ Public Class Form1
 
     End Sub
 
+    Private Sub readFilesFromFolder()
+        Dim di As New IO.DirectoryInfo(txt2.Text)
+        Dim diar1 As IO.FileInfo() = di.GetFiles("*.mp3")
+        Dim dra As IO.FileInfo
+        Dim musicItem As itemMusic
+
+        myMusicList = New List(Of itemMusic)
+        myHashMap = New Dictionary(Of Integer, Integer)
+        For Each dra In diar1
+            musicItem = New itemMusic
+            If (myMusicList.Count < 1) Then
+                musicItem.id = 0
+            Else
+                musicItem.id = myMusicList.Max(Function(x) x.id) + 1
+            End If
+            musicItem.fileName = dra.FullName
+            musicItem.voteOK = musicItem.id
+            myMusicList.Add(musicItem)
+            myHashMap.Add(musicItem.id, myMusicList.Count)
+        Next
+        Me.ItemMusicBindingSource.DataSource = myMusicList
+    End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         LaunchMusic(TryCast(Me.DataGridView1.Rows(e.RowIndex).DataBoundItem, itemMusic))
@@ -123,4 +144,7 @@ Public Class Form1
         playNext()
     End Sub
 
+    Private Sub btnParcourir_Click(sender As Object, e As EventArgs) Handles btnParcourir.Click
+        readFilesFromFolder()
+    End Sub
 End Class
