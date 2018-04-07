@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MusicList>
+  <Music>
+    <id>1</id>
+    <fileName>D:\_Projet\LocalJukeBox\LocalJukeBox_Server\Music\Felix Cartal - Runaway (feat. REGN) (192kbit_AAC).m4a</fileName>
+  </Music>
+  <Music>
+    <id>2</id>
+    <fileName>C:\Users\Godefroy\Downloads\music\Marshmello ft Anne-Marie - FRIENDS (192kbit_AAC).m4a</fileName>
+  </Music>
+  <Music>
+    <id>3</id>
+    <fileName>C:\Users\Godefroy\Downloads\music\Aero Chord - Shadows (feat. Nevve) (192kbit_AAC).m4a</fileName>
+  </Music>
+  <Music>
+    <id>4</id>
+    <fileName>C:\Users\Godefroy\Downloads\AViVA - GRRRLS.mp3</fileName>
+  </Music>
+</MusicList>
